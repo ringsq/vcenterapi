@@ -1,4 +1,4 @@
-module github.com/tjdavis3/vcenterapi
+module github.com/ringsq/vcenterapi
 
 go 1.21.6
 
