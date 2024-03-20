@@ -79,6 +79,7 @@ type VMDetail struct {
 	} `json:"scsi_adapters"`
 	SerialPorts struct {
 	} `json:"serial_ports"`
+	VMinterfaces []VMinterface
 }
 type Backing struct {
 	Type     string `json:"type"`
@@ -113,4 +114,16 @@ type NIC struct {
 	Type                    string `json:"type"`
 	UptCompatibilityEnabled bool   `json:"upt_compatibility_enabled"`
 	WakeOnLanEnabled        bool   `json:"wake_on_lan_enabled"`
+}
+
+type VMinterface struct {
+	IP struct {
+		IPAddresses []struct {
+			IPAddress    string `json:"ip_address"`
+			PrefixLength int    `json:"prefix_length"`
+			State        string `json:"state"`
+		} `json:"ip_addresses"`
+	} `json:"ip"`
+	MacAddress string `json:"mac_address"`
+	Nic        string `json:"nic"`
 }
